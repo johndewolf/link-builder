@@ -1,11 +1,18 @@
-$(document).ready(function(){
-	$("#twitterSubmit").on("click", function() {
-		$( "#twitterComplete" ).text( "http://twitter.com/intent/tweet?url=http://" +
-				$("#twitterUrl").val() + "&amp;text=" +
-				$("#twitterCopy").val().replace(/ /g, "%20"));
-	});
+var linkBuilder = angular.module('linkBuilder', []);
 
-  $("#facebookSubmit").on("click", function() {
-    $("#facebookComplete").text("https://www.facebook.com/sharer/sharer.php?u="+$("#facebookURL").val());
-  });
-});
+linkBuilder.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+	$scope.twitterUrl = '';
+	
+	$scope.twitterCopy = '';
+
+	$scope.twitterComplete = function() {
+		return $scope.twitterCopy.replace(/ /g, "%20");
+	};
+
+	$scope.tweetLength = function() {
+		if ($scope.twitterCopy.length > 140) {
+			return "tweet-over";
+		};
+	}
+
+}]); 

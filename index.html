@@ -1,19 +1,24 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en-us" ng-app="linkBuilder">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Social Link Builder</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+      <div class="container" ng-controller="mainController">
       <div class="twitter">
         <h1>Twitter</h1>
-        URL: <input type="text" id="twitterUrl"/>
-        Copy: <input type="text" id="twitterCopy"/>
-        <button type="button" id="twitterSubmit">Submit</button>
-        <div id="twitterComplete"></div>
+        <label>Url</label>
+        <input type="text" ng-model="twitterUrl"/>
+        <label>Copy</label>
+        <input type="textarea" ng-model="twitterCopy"/>
+        <div class="{{ tweetLength() }}">http://twitter.com/intent/tweet?url=http://{{ twitterUrl }}&amp;text={{ twitterComplete() }}</div>
       </div>
 
       <div class="facebook">
