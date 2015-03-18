@@ -1,7 +1,14 @@
 var linkBuilder = angular.module('linkBuilder', []);
 
 linkBuilder.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
-	$scope.twitterUrl = '';
+	
+	$scope.twitterUrlInput = '';
+
+	$scope.twitterUrl = function() {
+		if ($scope.twitterUrlInput != '') {
+			return 'url=http://' + $scope.twitterUrlInput;
+		};
+	}
 	
 	$scope.twitterCopy = '';
 
@@ -14,5 +21,9 @@ linkBuilder.controller('mainController', ['$scope', '$filter', function($scope, 
 			return "tweet-over";
 		};
 	}
+
+	$scope.facebookUrl = '';
+
+	$scope.gplus = '';
 
 }]); 

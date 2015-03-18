@@ -12,20 +12,53 @@
     </head>
     <body>
       <div class="container" ng-controller="mainController">
-      <div class="twitter">
-        <h1>Twitter</h1>
-        <label>Url</label>
-        <input type="text" ng-model="twitterUrl"/>
-        <label>Copy</label>
-        <input type="textarea" ng-model="twitterCopy"/>
-        <div class="{{ tweetLength() }}">http://twitter.com/intent/tweet?url=http://{{ twitterUrl }}&amp;text={{ twitterComplete() }}</div>
-      </div>
-
-      <div class="facebook">
-        <H1>Facebook</H1>
-        URL <input type="text" id="facebookURL">
-        <button type="botton" id="facebookSubmit">Submit</button>
-        <div id="facebookComplete"></div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="twitter">
+              <h1>Twitter</h1>
+              <div class="col-sm-6">
+                <label>Url</label>
+                <textarea class="form-control" rows="3" ng-model="twitterUrlInput"/></textarea>
+                <label>Copy</label>
+                <textarea class="form-control" rows="3" ng-model="twitterCopy"/></textarea>
+              </div>
+              <div class="col-sm-6">
+                <label>Tweet Url:</label>
+                <div class="tweet-return {{ tweetLength() }}">http://twitter.com/intent/tweet?{{ twitterUrl() }}&amp;text={{ twitterComplete() }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="facebook">
+              <h1>Facebook</h1>
+              <div class="col-sm-6">
+                <label>Url</label>
+                <textarea class="form-control" ng-model="facebookUrl"></textarea>
+              </div>
+              <div class="col-sm-6">
+                <label>Facebook Url:</label>
+                <div class="facebook-return">http://www.facebook.com/sharer/sharer.php?u=http://{{facebookUrl}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="google-plus">
+              <h1>Google Plus</h1>
+              <div class="col-sm-6">
+                <label>Url</label>
+                <textarea class="form-control" ng-model="gplusUrl"></textarea>
+              </div>
+              <div class="col-sm-6">
+                <label>Google Plus Url:</label>
+                <div class="gplus-return">https://plus.google.com/share?url=http://{{gplusUrl}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

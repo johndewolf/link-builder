@@ -1,3 +1,7 @@
+.tweet-return {
+	word-break: break-all;
+}
+
 .tweet-over {
 	color: red
 }
