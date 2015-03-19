@@ -1,12 +1,12 @@
 var linkBuilder = angular.module('linkBuilder', []);
 
 linkBuilder.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
-	
-	$scope.twitterUrlInput = '';
+
+	$scope.url = '';
 
 	$scope.twitterUrl = function() {
 		if ($scope.twitterUrlInput != '') {
-			return 'url=http://' + $scope.twitterUrlInput;
+			return 'url=http://' + $scope.url;
 		};
 	}
 	
