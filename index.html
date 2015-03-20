@@ -20,14 +20,23 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-6">
-            <h2>Twitter</h2>      
+          <div class="col-sm-12">
+            <h2>Twitter</h2>    
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">  
               <label>Copy</label>
               <textarea class="form-control" rows="3" ng-model="twitterCopy"/></textarea>
           </div>
           <div class="col-sm-6">
             <label>Tweet Url:</label>
-            <div class="tweet-return {{ tweetLength() }}">http://twitter.com/intent/tweet?{{ twitterUrl() }}&amp;text={{ twitterComplete() }}</div>
+            <div class="tweet-return" ng-class="{ 'tweet-over': tweetCopy.length > 117 }"><a href="http://twitter.com/intent/tweet?text={{ twitterComplete() }}&{{ twitterUrl() }}" target="_blank">http://twitter.com/intent/tweet?text={{ twitterComplete() }}&{{ twitterUrl() }}</a></div>
+            <div>Characters remaining: {{ 117 - twitterCopy.length }}</div>
+            <div class="alert warning">
+              <div ng-show="tweetCopy.length > 117">Tweet is over 140 characters!</div>
+
+            </div>
           </div>
         </div>
         <div class="row">
@@ -40,7 +49,7 @@
               </div>
               <div class="col-sm-6">
                 <label>Facebook Url:</label>
-                <div class="facebook-return">http://www.facebook.com/sharer/sharer.php?u=http://{{facebookUrl}}</div>
+                <div class="facebook-return">http://www.facebook.com/sharer/sharer.php?u=http://{{url}}</div>
               </div>
             </div>
           </div>

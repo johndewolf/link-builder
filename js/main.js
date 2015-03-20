@@ -1,6 +1,6 @@
 var linkBuilder = angular.module('linkBuilder', []);
 
-linkBuilder.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+linkBuilder.controller('mainController', ['$scope', '$log', function($scope, $log) {
 
 	$scope.url = '';
 
@@ -16,13 +16,9 @@ linkBuilder.controller('mainController', ['$scope', '$filter', function($scope, 
 		return $scope.twitterCopy.replace(/ /g, "%20");
 	};
 
-	$scope.tweetLength = function() {
-		if ($scope.twitterCopy.length > 140) {
-			return "tweet-over";
-		};
+	$scope.tweetFullChara = function() {
+		return $scope.twitterCopy.length + $scope.url.length + 9;
 	}
-
-	$scope.facebookUrl = '';
 
 	$scope.gplus = '';
 
