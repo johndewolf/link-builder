@@ -1,7 +1,12 @@
-.tweet-return {
+body {
+	padding-bottom: 25px;
+}
+
+.url-return {
 	word-break: break-all;
 }
 
 .tweet-over {
 	color: red
 }
+
