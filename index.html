@@ -13,60 +13,71 @@
     <body>
       <div class="container" ng-controller="mainController">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             <h1>Social Link Builder</h1>
-            <label>Url</label>
-            <textarea class="form-control" rows="3" ng-model="url"/></textarea>
           </div>
         </div>
         <div class="row">
+          <div class="col-sm-6">
+            <label>URL</label>
+            <form name="urlForm">
+              <input type="url" name="input" ng-model="url" required class="col-xs-12">
+              <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
+              <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
+            </form>
+            <!-- <textarea class="form-control" rows="3" ng-model="url" required></textarea> -->
+          </div>
+          <div class="col-sm-6">
+            <label>UTM</label>
+            <div class="form-group">
+              <label>Campaign:</label>
+              <input type="text" ng-model="utm.campaign" id="utmCampaign"></input>
+            </div>
+            <div class="form-group">
+              <label>Medium:</label>
+              <input type="text" ng-model="utm.medium"></input>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
           <div class="col-sm-12">
-            <h2>Twitter</h2>    
+            <h3>Twitter</h3>    
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6">  
+            <div class="form-group">
               <label>Copy</label>
               <textarea class="form-control" rows="3" ng-model="twitterCopy"/></textarea>
+            </div>
+            <div class="form-group">
+              <label>Twitter UTM Source</label><br />
+              <input type="text" ng-model="utm.twitterSource" class="col-xs-12"></input>
+            </div>
           </div>
           <div class="col-sm-6">
             <label>Tweet Url:</label>
-            <div class="tweet-return" ng-class="{ 'tweet-over': tweetCopy.length > 117 }"><a href="http://twitter.com/intent/tweet?text={{ twitterComplete() }}&{{ twitterUrl() }}" target="_blank">http://twitter.com/intent/tweet?text={{ twitterComplete() }}&{{ twitterUrl() }}</a></div>
+            <div class="url-return" ng-class="{ 'tweet-over': tweetCopy.length > 117 }"><a href="{{ twitterReturnUrl() }}" target="_blank">{{ twitterReturnUrl() }}</a></div>
             <div>Characters remaining: {{ 117 - twitterCopy.length }}</div>
             <div class="alert warning">
               <div ng-show="tweetCopy.length > 117">Tweet is over 140 characters!</div>
-
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <div class="facebook">
-              <h2>Facebook</h2>
-              <div class="col-sm-6">
-                <label>Url</label>
-                <textarea class="form-control" ng-model="facebookUrl"></textarea>
-              </div>
-              <div class="col-sm-6">
-                <label>Facebook Url:</label>
-                <div class="facebook-return">http://www.facebook.com/sharer/sharer.php?u=http://{{url}}</div>
-              </div>
+            <h3>Facebook</h3>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Facebook UTM Source</label><br />
+              <input type="text" ng-model="utm.facebookSource" class="col-xs-12"></input>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="google-plus">
-              <h2>Google Plus</h2>
-              <div class="col-sm-6">
-                <label>Url</label>
-                <textarea class="form-control" ng-model="gplusUrl"></textarea>
-              </div>
-              <div class="col-sm-6">
-                <label>Google Plus Url:</label>
-                <div class="gplus-return">https://plus.google.com/share?url=http://{{gplusUrl}}</div>
-              </div>
-            </div>
+          <div class="col-sm-6">
+            <label>Facebook Url:</label>
+            <div class="url-return"><a href="{{ facebookReturnUrl }}" target="_blank">{{ facebookReturnUrl() }}</a></div>
           </div>
         </div>
       </div>
