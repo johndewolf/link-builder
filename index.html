@@ -7,7 +7,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/ripples.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
@@ -18,25 +20,17 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-12 text-center">
+            <h3>What would you like to share?</h3>
             <label>URL</label>
-            <form name="urlForm">
-              <input type="url" name="input" ng-model="url" required class="col-xs-12">
-              <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
-              <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
+            <form name="urlForm" class="form-control-wrapper">
+              <div class="floating-label">URL</div>
+              <input type="url" class="url-input form-control empty" name="input" ng-model="url" required>
+              <span class="material-input"></span>
             </form>
+            <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
+            <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
             <!-- <textarea class="form-control" rows="3" ng-model="url" required></textarea> -->
-          </div>
-          <div class="col-sm-6">
-            <label>UTM</label>
-            <div class="form-group">
-              <label>Campaign:</label>
-              <input type="text" ng-model="utm.campaign" id="utmCampaign"></input>
-            </div>
-            <div class="form-group">
-              <label>Medium:</label>
-              <input type="text" ng-model="utm.medium"></input>
-            </div>
           </div>
         </div>
         <hr />
@@ -47,37 +41,17 @@
         </div>
         <div class="row">
           <div class="col-sm-6">  
-            <div class="form-group">
-              <label>Copy</label>
-              <textarea class="form-control" rows="3" ng-model="twitterCopy"/></textarea>
-            </div>
-            <div class="form-group">
-              <label>Twitter UTM Source</label><br />
-              <input type="text" ng-model="utm.twitterSource" class="col-xs-12"></input>
-            </div>
+            <label>Copy</label>
+            <form name="twitterForm" class="form-control-wrapper">
+              <textarea class="form-control" rows="3" ng-model="twitterCopy" name="tweet" ng-maxlength="119"/></textarea>
+              <span class="material-input"></span>
+            </form>
+            <span class="error" ng-show="twitterForm.tweet.$error.maxlength">Tweet is too long!</span>
           </div>
           <div class="col-sm-6">
             <label>Tweet Url:</label>
-            <div class="url-return" ng-class="{ 'tweet-over': tweetCopy.length > 117 }"><a href="{{ twitterReturnUrl() }}" target="_blank">{{ twitterReturnUrl() }}</a></div>
+            <div class="url-return" ng-class="{ 'tweet-over': tweetCopy.length > 117 }"><a href="{{ twitterReturnUrl() }}" target="_blank" ng-hide="!url">{{ twitterReturnUrl() }}</a></div>
             <div>Characters remaining: {{ 117 - twitterCopy.length }}</div>
-            <div class="alert warning">
-              <div ng-show="tweetCopy.length > 117">Tweet is over 140 characters!</div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <h3>Facebook</h3>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label>Facebook UTM Source</label><br />
-              <input type="text" ng-model="utm.facebookSource" class="col-xs-12"></input>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <label>Facebook Url:</label>
-            <div class="url-return"><a href="{{ facebookReturnUrl() }}" target="_blank">{{ facebookReturnUrl() }}</a></div>
           </div>
         </div>
         <div class="row">
@@ -87,41 +61,38 @@
         </div>
         <div class="row">
           <div class="col-sm-6">
-            <div class="form-group">
+            <div class="form-control-wrapper">
               <label>Title:</label>
               <textarea class="form-control" rows="3" ng-model="linkedin.title"/></textarea>
+              <span class="material-input"></span>
             </div>
-            <div class="form-group">
+            <div class="form-control-wrapper">
               <label>Summary:</label>
               <textarea class="form-control" rows="3" ng-model="linkedin.summary"/></textarea>
-            </div>
-            <div class="form-group">
-              <label>Linkedin UTM Source</label><br />
-              <input type="text" ng-model="utm.linkedinSource" class="col-xs-12"></input>
+              <span class="material-input"></span>
             </div>
           </div>
           <div class="col-sm-6">
             <label>Linkedin Url:</label>
-            <div class="url-return"><a href="{{ linkedinReturnUrl() }}" target="_blank">{{ linkedinReturnUrl() }}</a></div>
+            <div class="url-return"><a href="{{ linkedinReturnUrl() }}" target="_blank" ng-hide="!url">{{ linkedinReturnUrl() }}</a></div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <h3>Google Plus</h3>
-          </div>
+                <div class="row">
           <div class="col-sm-6">
-            <div class="form-group">
-              <label>Google Plus UTM Source</label><br />
-              <input type="text" ng-model="utm.gplusSource" class="col-xs-12"></input>
-            </div>
+            <h3>Facebook</h3>
+            <label>Facebook Url:</label>
+            <div class="url-return"><a href="{{ facebookReturnUrl() }}" target="_blank" ng-hide="!url">{{ facebookReturnUrl() }}</a></div>
           </div>
-          <div class="col-sm-6">
-            <label>Google Plus Url:</label>
-            <div class="url-return"><a href="{{ gplusReturnUrl() }}" target="_blank">{{ gplusReturnUrl() }}</a></div>
-          </div>
-        </div>
-      </div>
 
+          <div class="col-sm-6">
+            <h3>Google Plus</h3>
+            <label>Google Plus Url:</label>
+            <div class="url-return"><a href="{{ gplusReturnUrl() }}" target="_blank" ng-hide="!url">{{ gplusReturnUrl() }}</a></div>
+          </div>
+        </div>
+
+      </div>
+      <h1>{{utmBuilder}}</h1>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script src="js/main.js"></script>
     </body>

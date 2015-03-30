@@ -20,8 +20,15 @@ linkBuilder.controller('mainController', ['$scope', '$log', function($scope, $lo
 		return copy.replace(/ /g, "%20");
 	};
 
+	function utmBuild(socialNetwork) {
+		var medium = $scope.medium;
+		var campaign = $scope.campaign;
+		var scope = $scope.utm + '.' + socialNetwork + 'Source';
+	}
+
+
 	$scope.twitterReturnUrl = function() {
-		return 'http://twitter.com/intent/tweet?text='+ replaceSpaces($scope.twitterCopy) + '&' + 'url=' + $scope.url + '?utm_source=' + $scope.utm.twitterSource + '&utm_campaign=' + $scope.utm.campaign + '&utm_medium=' + $scope.utm.medium ;
+		return 'http://twitter.com/intent/tweet?text='+ replaceSpaces($scope.twitterCopy) + '&' + 'url=' + $scope.url;
 	}
 
 	$scope.tweetFullChara = function() {
@@ -29,8 +36,11 @@ linkBuilder.controller('mainController', ['$scope', '$log', function($scope, $lo
 	}
 
 	$scope.facebookReturnUrl = function() {
-		return 'http://www.facebook.com/sharer/sharer.php?u=' + $scope.url + '?utm_source=' + $scope.utm.facebookSource + '&utm_campaign=' + $scope.utm.campaign + '&utm_medium=' + $scope.utm.medium ;
+		return 'http://www.facebook.com/sharer/sharer.php?u=' + $scope.url;
 	}
+
+	$scope.utmBuilder = utmBuild('gplus');
+
 
 	$scope.linkedin = {
 		title: '',
@@ -38,11 +48,18 @@ linkBuilder.controller('mainController', ['$scope', '$log', function($scope, $lo
 	}
 
 	$scope.linkedinReturnUrl = function() {
-		return 'http://www.linkedin.com/shareArticle?mini=true&url=' + $scope.url + '&title=' + replaceSpaces($scope.linkedin.title) + '&summary=' + replaceSpaces($scope.linkedin.summary) + '?utm_source=' + $scope.utm.linkedinSource + '&utm_campaign=' + $scope.utm.campaign + '&utm_medium=' + $scope.utm.medium ; 
+		return 'http://www.linkedin.com/shareArticle?mini=true&url=' + $scope.url + '&title=' + replaceSpaces($scope.linkedin.title) + '&summary=' + replaceSpaces($scope.linkedin.summary); 
 	}
 
 	$scope.gplusReturnUrl = function(){
-		return 'https://plus.google.com/share?url=' + $scope.url + '?utm_source=' + $scope.utm.gplusSource + '&utm_campaign=' + $scope.utm.campaign + '&utm_medium=' + $scope.utm.medium;
+		return 'https://plus.google.com/share?url=' + $scope.url;
 	}
 
 }]); 
+
+
+// myApp.directive("twitterUrl", function() {
+//     return {
+//         template: ''
+//     }
+// });
