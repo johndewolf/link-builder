@@ -1,7 +1,10 @@
 var linkBuilder = angular.module('linkBuilder', []);
 
 linkBuilder.controller('mainController', ['$scope', '$log', function($scope, $log) {
-
+	if($scope.url === undefined){
+  	return false;
+  }
+  
 	$scope.url = '';
 
 	$scope.utm = {
