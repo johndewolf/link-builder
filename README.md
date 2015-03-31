@@ -1,2 +1,2 @@
 # link_builder
-A simple tool I built for our marketing team to build sharing URLsfor different social networks
+A simple tool I built for our marketing team to build sharing URLs for different social networks
