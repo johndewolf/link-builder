@@ -2,6 +2,10 @@ body {
 	padding-bottom: 25px;
 }
 
+a {
+	color: #337ab7;;
+}
+
 .url-return {
 	word-break: break-all;
 }
