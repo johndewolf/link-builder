@@ -1,0 +1,14 @@
+<div class="col-sm-12">
+<div class="row text-center">
+<h3>What URL would you like to shorten?</h3>
+<p ng-model="url"></p>
+      <form name="urlForm" class="form-control-wrapper">
+        <div class="floating-label">URL</div>
+        <input type="url" class="url-input form-control empty" name="input" ng-model="url" required>
+        <span class="material-input"></span>
+      </form>
+      <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
+      <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
+      <!-- <textarea class="form-control" rows="3" ng-model="url" required></textarea> -->
+    </div>
+  </div>
