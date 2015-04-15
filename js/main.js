@@ -7,7 +7,7 @@ linkBuilder.config(function($routeProvider, $locationProvider){
 			controller: 'mainController'
 		})
 
-		.when('/utm-builder', {
+		.when('link-builder/utm-builder', {
 			templateUrl: 'pages/utm-builder.html',
 			controller: 'utmController'
 		});
