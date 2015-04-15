@@ -14,15 +14,19 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <h1>Social Link Builder</h1>
+
+    <div class="navbar navbar-default">
+      <span class="navbar-brand">Social Link Builder</span>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        
+        <ul class="nav navbar-nav navbar-right">  
           <base href="/">
-          <a href="/">Link builder</a> | <a href="/utm-builder">UTM Builder</a>
-        </div>
+          <li><a href="/">Link builder</a></li>
+          <li><a href="/utm-builder">UTM Builder</a></li>
+        </ul>
       </div>
+    </div>
+    <div class="container">
       <div ng-view></div>
     </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

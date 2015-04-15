@@ -2,15 +2,12 @@
   <div class="row">
     <div class="col-sm-12 text-center">
       <h3>What would you like to share?</h3>
-      <label>URL</label>
       <form name="urlForm" class="form-control-wrapper">
-        <div class="floating-label">URL</div>
-        <input type="url" class="url-input form-control empty" name="input" ng-model="url" required>
+        <input type="url" class="url-input form-control empty" placeholder="URL" name="input" ng-model="url" required>
         <span class="material-input"></span>
       </form>
       <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
       <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
-      <!-- <textarea class="form-control" rows="3" ng-model="url" required></textarea> -->
     </div>
   </div>
   <hr />
@@ -21,15 +18,14 @@
   </div>
   <div class="row">
     <div class="col-sm-6">  
-      <label>Copy</label>
       <form name="twitterForm" class="form-control-wrapper">
-        <textarea class="form-control" rows="3" ng-model="twitterCopy" name="tweet" /></textarea>
+        <textarea class="form-control" rows="3" placeholder="Copy" ng-model="twitterCopy" name="tweet" /></textarea>
         <span class="material-input"></span>
       </form>
       <span ng-show="twitterCopy.length > 117">Tweet is too long!</span>
     </div>
     <div class="col-sm-6">
-      <label>Tweet Url:</label>
+      <div class="floating-label">Tweet Url:</div>
       <div class="url-return" ng-class="{ 'tweet-over': tweetCopy.length > 117 }"><a href="{{ twitterReturnUrl() }}" target="_blank" ng-hide="!url">{{ twitterReturnUrl() }}</a></div>
       <div>Characters remaining: {{ 117 - twitterCopy.length }}</div>
     </div>
@@ -42,31 +38,29 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="form-control-wrapper">
-        <label>Title:</label>
-        <textarea class="form-control" rows="3" ng-model="linkedin.title"/></textarea>
+        <textarea class="form-control" rows="3" placeholder="Title" ng-model="linkedin.title"/></textarea>
         <span class="material-input"></span>
       </div>
-      <div class="form-control-wrapper">
-        <label>Summary:</label>
-        <textarea class="form-control" rows="3" ng-model="linkedin.summary"/></textarea>
+      <div class="form-control-wrapper" style="margin-top:20px">
+        <textarea class="form-control" rows="3" placeholder="Summary" ng-model="linkedin.summary"/></textarea>
         <span class="material-input"></span>
       </div>
     </div>
     <div class="col-sm-6">
-      <label>Linkedin Url:</label>
+      <div class="floating-label">Linkedin Url:</div>
       <div class="url-return"><a href="{{ linkedinReturnUrl() }}" target="_blank" ng-hide="!url">{{ linkedinReturnUrl() }}</a></div>
     </div>
   </div>
           <div class="row">
     <div class="col-sm-6">
       <h3>Facebook</h3>
-      <label>Facebook Url:</label>
+      <div class="floating-label">Facebook Url:</div>
       <div class="url-return"><a href="{{ facebookReturnUrl() }}" target="_blank" ng-hide="!url">{{ facebookReturnUrl() }}</a></div>
     </div>
 
     <div class="col-sm-6">
       <h3>Google Plus</h3>
-      <label>Google Plus Url:</label>
+      <div class="floating-label">Google Plus Url:</div>
       <div class="url-return"><a href="{{ gplusReturnUrl() }}" target="_blank" ng-hide="!url">{{ gplusReturnUrl() }}</a></div>
     </div>
   </div>
