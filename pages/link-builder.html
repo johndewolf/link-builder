@@ -23,10 +23,10 @@
     <div class="col-sm-6">  
       <label>Copy</label>
       <form name="twitterForm" class="form-control-wrapper">
-        <textarea class="form-control" rows="3" ng-model="twitterCopy" name="tweet" ng-maxlength="119"/></textarea>
+        <textarea class="form-control" rows="3" ng-model="twitterCopy" name="tweet" /></textarea>
         <span class="material-input"></span>
       </form>
-      <span class="error" ng-show="twitterForm.tweet.$error.maxlength">Tweet is too long!</span>
+      <span ng-show="twitterCopy.length > 117">Tweet is too long!</span>
     </div>
     <div class="col-sm-6">
       <label>Tweet Url:</label>
