@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/ripples.css" />
@@ -22,86 +23,22 @@
         ga('create', 'UA-53444933-3', 'auto');
         ga('send', 'pageview');
       </script>
-      <div class="container" ng-controller="mainController">
-        <div class="row">
-          <div class="col-sm-12">
-            <h1>Social Link Builder</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 text-center">
-            <h3>What would you like to share?</h3>
-            <label>URL</label>
-            <form name="urlForm" class="form-control-wrapper">
-              <div class="floating-label">URL</div>
-              <input type="url" class="url-input form-control empty" name="input" ng-model="url" required>
-              <span class="material-input"></span>
-            </form>
-            <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
-            <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
-            <!-- <textarea class="form-control" rows="3" ng-model="url" required></textarea> -->
-          </div>
-        </div>
-        <hr />
-        <div class="row">
-          <div class="col-sm-12">
-            <h3>Twitter</h3>    
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">  
-            <label>Copy</label>
-            <form name="twitterForm" class="form-control-wrapper">
-              <textarea class="form-control" rows="3" ng-model="twitterCopy" name="tweet" ng-maxlength="119"/></textarea>
-              <span class="material-input"></span>
-            </form>
-            <span class="error" ng-show="twitterForm.tweet.$error.maxlength">Tweet is too long!</span>
-          </div>
-          <div class="col-sm-6">
-            <label>Tweet Url:</label>
-            <div class="url-return" ng-class="{ 'tweet-over': tweetCopy.length > 117 }"><a href="{{ twitterReturnUrl() }}" target="_blank" ng-hide="!url">{{ twitterReturnUrl() }}</a></div>
-            <div>Characters remaining: {{ 117 - twitterCopy.length }}</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <h3>Linkedin</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-control-wrapper">
-              <label>Title:</label>
-              <textarea class="form-control" rows="3" ng-model="linkedin.title"/></textarea>
-              <span class="material-input"></span>
-            </div>
-            <div class="form-control-wrapper">
-              <label>Summary:</label>
-              <textarea class="form-control" rows="3" ng-model="linkedin.summary"/></textarea>
-              <span class="material-input"></span>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <label>Linkedin Url:</label>
-            <div class="url-return"><a href="{{ linkedinReturnUrl() }}" target="_blank" ng-hide="!url">{{ linkedinReturnUrl() }}</a></div>
-          </div>
-        </div>
-                <div class="row">
-          <div class="col-sm-6">
-            <h3>Facebook</h3>
-            <label>Facebook Url:</label>
-            <div class="url-return"><a href="{{ facebookReturnUrl() }}" target="_blank" ng-hide="!url">{{ facebookReturnUrl() }}</a></div>
-          </div>
 
-          <div class="col-sm-6">
-            <h3>Google Plus</h3>
-            <label>Google Plus Url:</label>
-            <div class="url-return"><a href="{{ gplusReturnUrl() }}" target="_blank" ng-hide="!url">{{ gplusReturnUrl() }}</a></div>
-          </div>
-        </div>
 
+    <div class="navbar navbar-default">
+      <span class="navbar-brand">Social Link Builder</span>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        
+        <ul class="nav navbar-nav navbar-right">  
+          <base href="/">
+          <li><a href="/">Link builder</a></li>
+          <li><a href="/utm-builder">UTM Builder</a></li>
+        </ul>
       </div>
-      <h1>{{utmBuilder}}</h1>
+    </div>
+    <div class="container">
+      <div ng-view></div>
+    </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script src="js/main.js"></script>
     </body>
