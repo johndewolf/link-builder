@@ -1,4 +1,4 @@
-var linkBuilder = angular.module('linkBuilder', ['ngRoute']);
+var linkBuilder = angular.module('linkBuilder', ['ngRoute', "firebase"]);
 
 linkBuilder.config(function($routeProvider, $locationProvider){
 	$routeProvider
@@ -18,9 +18,9 @@ linkBuilder.config(function($routeProvider, $locationProvider){
 
 
 linkBuilder.controller('mainController', ['$scope', '$log', function($scope, $log) {
- 
+
 	$scope.url = '';
-	
+
 	$scope.twitterCopy = '';
 
 	function replaceSpaces(copy, network) {
@@ -58,14 +58,14 @@ linkBuilder.controller('mainController', ['$scope', '$log', function($scope, $lo
 	}
 
 	$scope.linkedinReturnUrl = function() {
-		return 'http://www.linkedin.com/shareArticle?mini=true&url=' + $scope.url + '&title=' + replaceSpaces($scope.linkedin.title, 'linkedin') + '&summary=' + replaceSpaces($scope.linkedin.summary, "linkedin"); 
+		return 'http://www.linkedin.com/shareArticle?mini=true&url=' + $scope.url + '&title=' + replaceSpaces($scope.linkedin.title, 'linkedin') + '&summary=' + replaceSpaces($scope.linkedin.summary, "linkedin");
 	}
 
 	$scope.gplusReturnUrl = function(){
 		return 'https://plus.google.com/share?url=' + $scope.url;
 	}
 
-}]); 
+}]);
 
 
 linkBuilder.controller('utmController', ['$scope', '$log', "$http", function($scope, $log) {
@@ -75,7 +75,7 @@ linkBuilder.controller('utmController', ['$scope', '$log', "$http", function($sc
 		source: '',
 		medium: '',
 	},
-	
+
 	$scope.utmUrls = [],
 
 	$scope.buildUrls = function() {
@@ -84,4 +84,4 @@ linkBuilder.controller('utmController', ['$scope', '$log', "$http", function($sc
 		}
 	} 
 
-}]); 
+}]);
