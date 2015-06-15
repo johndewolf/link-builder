@@ -12,7 +12,6 @@ linkBuilder.config(function($routeProvider, $locationProvider){
 			controller: 'utmController'
 		});
 
-		$locationProvider.html5Mode(true);
 });
 
 

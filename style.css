@@ -17,3 +17,24 @@ a {
 .url-input {
 	text-align: center;
 }
+
+.utmBuilder .floating-label {
+	margin-top: 1em;
+}
+
+.utmBuilder .panel-heading {
+	margin-top: 1em;
+}
+
+.utmBuilder button {
+	margin-top: 2em;
+}
+
+.panel {
+	background: #EEEEEE;
+	word-break: break-all;	
+}
+
+.list-group-item {
+	background-color: #E4E7E7;
+}

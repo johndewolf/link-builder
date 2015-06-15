@@ -1,4 +1,4 @@
-<div ng-controller="utmController">
+<div ng-controller="utmController" class="utmBuilder">
   <div class="row">
         <div class="col-sm-12 text-center">
       <h3>What would you like to share?</h3>
@@ -11,27 +11,30 @@
       <!-- <textarea class="form-control" rows="3" ng-model="url" required></textarea> -->
     </div>
     <div class="col-sm-6">
-      <div class="floating-label" style="margin-top: 20px">UTM Source</div>
+      <div class="floating-label">UTM Source</div>
       <input type="text" class="form-control" ng-model="utm.source"></input>
 
-      <div class="floating-label" style="margin-top: 20px">UTM Campaign</div>
+      <div class="floating-label">UTM Campaign</div>
       <input type="text" class="form-control" ng-model="utm.campaign"></input>
 
-      <div class="floating-label" style="margin-top: 20px">UTM Medium</div>
+      <div class="floating-label">UTM Medium</div>
       <input type="text" class="form-control" ng-model="utm.medium"></input>
 
       <button ng-class="url === undefined ? 'btn btn-danger' : 'btn btn-primary';" ng-click="buildUrls()">ADD</button>
     </div>
     <div class="col-sm-6">
-      <div class="floating-label" style="margin-top: 20px">
-      <ng-pluralize count="utmUrls.length"
-                 when="{'0': 'URL',
-                     'one': 'URL',
-                     'other': 'URLS'}"></div>
-      </ng-pluralize>
-      <ul ng-repeat="url in utmUrls">
-        <li>{{url}}</li>
-      </ul>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <ng-pluralize count="utmUrls.length"
+                     when="{'0': 'URL',
+                         'one': 'URL',
+                         'other': 'URLS'}">
+          </ng-pluralize>
+        </div>
+        <ul ng-repeat="url in utmUrls track by $index" class="panel-body">
+          <li class="list-group-item">{{url}}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
