@@ -77,8 +77,8 @@ linkBuilder.controller('utmController', ['$scope', '$log', "$http", function($sc
 
 	$scope.utmUrls = [],
 
-	$scope.buildUrls = function() {
-		if($scope.url != undefined) {
+	$scope.submit = function() {
+		if($scope.url) {
 			$scope.utmUrls.push($scope.url + '?utm_source=' + $scope.utm.source + '&utm_campaign=' + $scope.utm.campaign + '&utm_medium=' + $scope.utm.medium);
 		}
 	} 

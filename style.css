@@ -19,11 +19,12 @@ a {
 }
 
 .utmBuilder .floating-label {
-	margin-top: 1em;
+	margin-top: 4em;
+	margin-bottom: 1em;
 }
 
 .utmBuilder .panel-heading {
-	margin-top: 1em;
+	margin-top: 4em;
 }
 
 .utmBuilder button {
@@ -31,10 +32,18 @@ a {
 }
 
 .panel {
-	background: #EEEEEE;
+	background: transparent;
 	word-break: break-all;	
 }
 
 .list-group-item {
-	background-color: #E4E7E7;
+	background-color: transparent;
+}
+
+.form-control-wrapper .material-input:before .invalid {
+	background-color: red;
+}
+
+body {
+	background-color: #F0F0F0;
 }
