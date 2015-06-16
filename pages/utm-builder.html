@@ -1,6 +1,6 @@
 <div ng-controller="utmController" class="utmBuilder">
   <div class="row">
-        <div class="col-sm-12 text-center">
+    <div class="col-sm-12 text-center">
       <h3>What would you like to share?</h3>
       <form name="urlForm" class="form-control-wrapper">
         <input type="url" class="url-input form-control" placeholder="URL" name="input" ng-model="url" required>
@@ -8,8 +8,10 @@
       </form>
       <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
       <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
-      <!-- <textarea class="form-control" rows="3" ng-model="url" required></textarea> -->
+
     </div>
+  </div>
+  <div class="row">
     <div class="col-sm-6">
       <form ng-submit="submit()">
         <div class="floating-label">UTM Source</div>
@@ -21,7 +23,7 @@
         <div class="floating-label">UTM Medium</div>
         <input type="text" class="form-control" ng-model="utm.medium"></input>
 
-        <button ng-class="url === invalid || url === false ? 'btn btn-danger' : 'btn btn-primary';">ADD</button>
+        <button ng-class="url === invalid ? 'btn btn-danger' : 'btn btn-primary';">ADD</button>
       </form>
     </div>
     <div class="col-sm-6">
