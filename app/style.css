@@ -1,0 +1,49 @@
+body {
+	padding-bottom: 25px;
+}
+
+a {
+	color: #337ab7;;
+}
+
+.url-return {
+	word-break: break-all;
+}
+
+.tweet-over {
+	color: red
+}
+
+.url-input {
+	text-align: center;
+}
+
+.utmBuilder .floating-label {
+	margin-top: 4em;
+	margin-bottom: 1em;
+}
+
+.utmBuilder .panel-heading {
+	margin-top: 4em;
+}
+
+.utmBuilder button {
+	margin-top: 2em;
+}
+
+.panel {
+	background: transparent;
+	word-break: break-all;	
+}
+
+.list-group-item {
+	background-color: transparent;
+}
+
+.form-control-wrapper .material-input:before .invalid {
+	background-color: red;
+}
+
+body {
+	background-color: #F0F0F0;
+}

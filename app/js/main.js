@@ -1,6 +1,6 @@
 var linkBuilder = angular
 
-	.module('linkBuilder', ['ngRoute', "firebase"])
+	.module('linkBuilder', ['ngRoute'])
 
 	.config(function($routeProvider, $locationProvider){
 		$routeProvider
