@@ -1,5 +1,4 @@
 var linkBuilder = angular
-
 	.module('linkBuilder', ['ui.router', 'firebase'])
 
 	.config(function($stateProvider, $urlRouterProvider){
@@ -14,6 +13,18 @@ var linkBuilder = angular
 				templateUrl: 'pages/link-builder.html',
 				controller: 'socialLinkController'
 			})
+
+			.state('login', {
+				url: '/login',
+				controller: 'authController',
+				templateUrl: 'pages/login.html'
+			})
+
+			.state('register', {
+				url: '/register',
+				controller: 'authController as authctrl',
+				templateUrl: 'pages/register.html'
+			});
 
 		$urlRouterProvider.otherwise('/');
 	})

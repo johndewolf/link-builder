@@ -1,5 +1,5 @@
   <!doctype html>
-  <html class="no-js" lang="en-us" ng-app="linkBuilder">
+  <html class="no-js" lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
     <!-- endbower -->
   </head>
-  <body>
+  <body ng-app="linkBuilder">
     <div class="navbar navbar-default">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -27,7 +27,7 @@
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/#/">Link builder</a></li>
-          <li><a href="#/utm-builder">UTM Builder</a></li>
+          <li><a ui-sref="utm-builder">UTM Builder</a></li>
         </ul>
       </div>
     </div>
@@ -53,5 +53,7 @@
     <script src="js/main.js"></script>
     <script src="js/controllers/sociallinkcontroller.js"></script>
     <script src="js/controllers/utmController.js"></script>
+    <script src="js/controllers/authController.js"></script>
+    <script src="js/services/auth.service.js"></script>
   </body>
   </html>
