@@ -1,18 +1,22 @@
 var linkBuilder = angular
 
-	.module('linkBuilder', ['ngRoute'])
+	.module('linkBuilder', ['ui.router', 'firebase'])
 
-	.config(function($routeProvider, $locationProvider){
-		$routeProvider
-			.when('/', {
+	.config(function($stateProvider, $urlRouterProvider){
+		$stateProvider
+			.state('urlBuilder', {
+				url: '/utm-builder',
+				templateUrl: 'pages/utm-builder.html',
+				controller: 'utmController'
+			})
+			.state('linkBuilder', {
+				url: '/',
 				templateUrl: 'pages/link-builder.html',
 				controller: 'socialLinkController'
 			})
 
-			.when('/utm-builder', {
-				templateUrl: 'pages/utm-builder.html',
-				controller: 'utmController'
-			});
-
-	});
+		$urlRouterProvider.otherwise('/');
+	})
+	
+	.constant('FirebaseUrl', 'https://link-builder.firebaseio.com');
 
