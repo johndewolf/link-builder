@@ -3,17 +3,16 @@ var linkBuilder = angular
 
 	.config(function($stateProvider, $urlRouterProvider){
 		$stateProvider
-			.state('urlBuilder', {
+			.state('utmBuilder', {
 				url: '/utm-builder',
-				templateUrl: 'pages/utm-builder.html',
-				controller: 'utmController'
+				controller: 'utmController as utmctrl',
+				templateUrl: 'pages/utm-builder.html'
 			})
 			.state('linkBuilder', {
 				url: '/',
-				templateUrl: 'pages/link-builder.html',
-				controller: 'socialLinkController'
+				controller: 'socialLinkController as slCtrl',
+				templateUrl: 'pages/link-builder.html'
 			})
-
 			.state('login', {
 				url: '/login',
 				controller: 'authController',
@@ -26,7 +25,6 @@ var linkBuilder = angular
 				templateUrl: 'pages/register.html'
 			});
 
-		$urlRouterProvider.otherwise('/');
 	})
 	
 	.constant('FirebaseUrl', 'https://link-builder.firebaseio.com');
