@@ -15,7 +15,7 @@
     <!-- endbower -->
   </head>
   <body ng-app="linkBuilder">
-    <div class="navbar navbar-default">
+    <div class="navbar navbar-default" ng-controller="navController">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
@@ -26,8 +26,10 @@
       </div>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/#/">Link builder</a></li>
-          <li><a ui-sref="utm-builder">UTM Builder</a></li>
+          <li><a ui-sref="linkBuilder">Link builder</a></li>
+          <li><a ui-sref="utmBuilder">UTM Builder</a></li>
+          <li ng-hide="authData"><a href="/#/login">Login</a></li>
+          <li ng-show="authData"><a ng-click="logout()">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -54,6 +56,7 @@
     <script src="js/controllers/sociallinkcontroller.js"></script>
     <script src="js/controllers/utmController.js"></script>
     <script src="js/controllers/authController.js"></script>
+    <script src="js/controllers/navController.js"></script>
     <script src="js/services/auth.service.js"></script>
   </body>
   </html>

@@ -1,5 +1,5 @@
 angular.module('linkBuilder')
-	.controller('authController', function(Auth, $state, $log){
+	.controller('authController', function(Auth, $state){
 		var authCtrl = this;
 
 		authCtrl.user = {
@@ -9,7 +9,7 @@ angular.module('linkBuilder')
 
 		authCtrl.login = function() {
 			Auth.$authWithPassword(authCtrl.user).then(function (auth) {
-				$state.go('urlBuilder');
+				$state.go('utmBuilder');
 			}, function (error){
 				authCtrl.error = error;
 			});

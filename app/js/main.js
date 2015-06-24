@@ -15,10 +15,18 @@ var linkBuilder = angular
 			})
 			.state('login', {
 				url: '/login',
-				controller: 'authController',
-				templateUrl: 'pages/login.html'
+				controller: 'authController as authctrl',
+				templateUrl: 'pages/login.html',
+				resolve: {
+					requireNoAuth: function($state, Auth){
+						return Auth.$requireAuth().then(function(auth){
+							$state.go('linkBuilder');
+						}, function(error) {
+							return;
+						});
+					}
+				}
 			})
-
 			.state('register', {
 				url: '/register',
 				controller: 'authController as authctrl',
