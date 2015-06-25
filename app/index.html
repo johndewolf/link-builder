@@ -1,0 +1,62 @@
+  <!doctype html>
+  <html class="no-js" lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Social Link Builder</title>
+    <meta name="description" content="Quickly build links for social media or with UTM coes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
+    <!-- endbower -->
+  </head>
+  <body ng-app="linkBuilder">
+    <div class="navbar navbar-default" ng-controller="navController">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Social Link Builder</span>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref="linkBuilder">Link builder</a></li>
+          <li><a ui-sref="utmBuilder">UTM Builder</a></li>
+          <li ng-hide="authData"><a href="/#/login">Login</a></li>
+          <li ng-show="authData"><a ng-click="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div ui-view></div>
+    </div>
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+
+    <script src="js/main.js"></script>
+    <script src="js/controllers/sociallinkcontroller.js"></script>
+    <script src="js/controllers/utmController.js"></script>
+    <script src="js/controllers/authController.js"></script>
+    <script src="js/controllers/navController.js"></script>
+    <script src="js/services/auth.service.js"></script>
+  </body>
+  </html>

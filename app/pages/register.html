@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-md-offset-4 col-md-4 auth-box">
+		<h3>Register Now</h3>
+		<p>Gain access to exclussive features</p>
+		<form ng-submit="authctrl.register()">
+			<input type="email" class="form-control" placeholder="email" ng-model="authctrl.user.email" >
+			<input type="password" placeholder="password" class="form-control floating-label" ng-model="authctrl.user.password"> 
+			<div ng-show="authctrl.error">
+		  	<span>{{ authctrl.error.message }}</span>
+			</div>
+			<button type="submit" class="btn btn-primary">Register</button>
+		</form>
+	</div>
+</div>
