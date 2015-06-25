@@ -9,9 +9,13 @@ var linkBuilder = angular
 				templateUrl: 'pages/utm-builder.html'
 			})
 			.state('linkBuilder', {
-				url: '/',
+				url: '/social-link-builder',
 				controller: 'socialLinkController as slCtrl',
 				templateUrl: 'pages/link-builder.html'
+			})
+			.state('home', {
+				url: '/',
+				templateUrl: 'pages/home.html'
 			})
 			.state('login', {
 				url: '/login',
