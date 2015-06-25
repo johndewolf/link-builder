@@ -14,7 +14,7 @@ var linkBuilder = angular
 				templateUrl: 'pages/link-builder.html'
 			})
 			.state('home', {
-				url: '/',
+				url: '',
 				templateUrl: 'pages/home.html'
 			})
 			.state('login', {
