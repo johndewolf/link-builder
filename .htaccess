@@ -7,3 +7,5 @@ RewriteRule ^ - [L]
 
 # Rewrite everything else to index.html to allow html5 state links
 # RewriteRule ^ index.html [L]
+
+Redirect 301 /index.html https://link-builder.firebaseapp.com
