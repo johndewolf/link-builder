@@ -1,0 +1,19 @@
+<div>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h3>What would you like to share?</h3>
+      <form name="urlForm" class="form-control-wrapper" ng-submit="shortCtrl.submitUrl()">
+        <input type="url" class="url-input form-control empty" placeholder="URL" name="input" ng-model="shortCtrl.fullUrl" required >
+        <span class="material-input"></span>
+        <button ng-class="shortCtrl.fullUrl === invalid ? 'btn btn-danger' : 'btn btn-primary';">ADD</button>
+      </form>
+      <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
+      <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
+    </div>
+  </div>
+  <ul>
+    <li ng-repeat="url in shortCtrl.urls">{{url}}</li>
+  </ul>
+  <p>{{shortCtrl.postSubmit}} - {{shortCtrl.shortUrl}}</p>
+  <p>{{shortCtrl.test}}</p>
+</div>

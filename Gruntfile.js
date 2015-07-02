@@ -20,7 +20,22 @@ module.exports = function(grunt) {
         	keepalive: true,
           port: 9001,
           base: 'app',
-          open: true
+          open: true,
+          livereload: {
+            options: {
+              middleware: function (connect) {
+                var middlewares = [
+                    //Enable CORS
+                    connect().use(function (req, res, next) {
+                      res.setHeader('Access-Control-Allow-Origin', '*');
+                      res.setHeader('Access-Control-Allow-Methods', '*');
+                      next();
+                    })
+                  ];
+                return middlewares;
+              }
+            }
+          }
         }
       }
     }

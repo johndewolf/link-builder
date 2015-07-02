@@ -17,6 +17,11 @@ var linkBuilder = angular
 				url: '',
 				templateUrl: 'pages/home.html'
 			})
+			.state('urlShortener', {
+				url: '/url-shortener',
+				controller: 'urlshortenerController as shortCtrl',
+				templateUrl: 'pages/url-shortener.html'
+			})
 			.state('login', {
 				url: '/login',
 				controller: 'authController as authctrl',
@@ -36,8 +41,5 @@ var linkBuilder = angular
 				controller: 'authController as authctrl',
 				templateUrl: 'pages/register.html'
 			});
-
-	})
-	
+		})
 	.constant('FirebaseUrl', 'https://link-builder.firebaseio.com');
-
