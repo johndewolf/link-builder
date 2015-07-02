@@ -20,7 +20,16 @@ var linkBuilder = angular
 			.state('urlShortener', {
 				url: '/url-shortener',
 				controller: 'urlshortenerController as shortCtrl',
-				templateUrl: 'pages/url-shortener.html'
+				templateUrl: 'pages/url-shortener.html',
+				resolve: {
+					requireAuth: function ($state, Auth) {
+						return Auth.$requireAuth().then(function(auth){
+							return;
+						}, function(error) {
+							$state.go('login');
+						});
+					}
+				}
 			})
 			.state('login', {
 				url: '/login',
@@ -29,7 +38,7 @@ var linkBuilder = angular
 				resolve: {
 					requireNoAuth: function($state, Auth){
 						return Auth.$requireAuth().then(function(auth){
-							$state.go('linkBuilder');
+							$state.go('urlShortener');
 						}, function(error) {
 							return;
 						});

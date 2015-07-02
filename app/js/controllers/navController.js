@@ -14,6 +14,4 @@ angular.module('linkBuilder')
     	$scope.doFade = true;
     }, 2500);
 
-    // $scope.message = 'Welcome ' + $scope.authData.password.email;
-
  	});

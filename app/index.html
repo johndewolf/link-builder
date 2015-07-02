@@ -29,6 +29,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a ui-sref="linkBuilder">Link builder</a></li>
             <li><a ui-sref="utmBuilder">UTM Builder</a></li>
+            <li ng-show="authData"><a ui-sref="urlShortener">URL Shortener</a></li>
             <li ng-hide="authData"><a href="./#/login">Login</a></li>
             <li ng-show="authData"><a href ng-click="logout()">Logout</a></li>
           </ul>
