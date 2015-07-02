@@ -11,9 +11,15 @@
       <span class="error" ng-show="urlForm.input.$error.url">Not valid URL (http:// is required)</span>
     </div>
   </div>
-  <ul>
-    <li ng-repeat="url in shortCtrl.urls">{{url}}</li>
-  </ul>
-  <p>{{shortCtrl.postSubmit}} - {{shortCtrl.shortUrl}}</p>
-  <p>{{shortCtrl.test}}</p>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ng-pluralize count="shortCtrl.urls.length"
+                 when="{'0': 'URL',
+                     'one': 'URL',
+                     'other': 'URLs'}">
+    </div>
+    <ul class="panel-body">
+      <li class="list-group-item" ng-repeat="url in shortCtrl.urls">{{url.longUrl}} - {{url.shortUrl}}</li>
+    </ul>
+  </div>
 </div>

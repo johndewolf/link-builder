@@ -26,8 +26,7 @@ angular.module('linkBuilder')
 		navCtrl.submitUrl = function() {
 			$http.post('https://www.googleapis.com/urlshortener/v1/url?fields=id&key=AIzaSyA2Fox4Wo3AS_-UrSls7FEsIv8g0useZCc', {'longUrl': navCtrl.fullUrl}).
 				success(function(data) {
-					var response = data.id;
-					navCtrl.urls.push(response);
+					navCtrl.urls.push({longUrl: navCtrl.fullUrl, shortUrl: data.id});
 				});
 		}
 	});

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Social Link Builder</title>
-    <meta name="description" content="Quickly build links for social media or with UTM coes">
+    <meta name="description" content="Generate links that autopopulate social sharing links for Twitter, Facebook, Google+, and LinkedIn. Add UTM codes to URLs for tracking. ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -15,55 +15,65 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body ng-app="linkBuilder">
-    <div ng-controller="navController">
-      <div class="navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a ui-sref="home"><span class="navbar-brand">Social Link Builder</span></a>
-        </div>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a ui-sref="linkBuilder">Link builder</a></li>
-            <li><a ui-sref="utmBuilder">UTM Builder</a></li>
-            <li ng-show="authData"><a ui-sref="urlShortener">URL Shortener</a></li>
-            <li ng-hide="authData"><a href="./#/login">Login</a></li>
-            <li ng-show="authData"><a href ng-click="logout()">Logout</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="alert-box" ng-show="authData" ng-class="{fade:doFade}">
-        Welcome Back {{ authData.password.email }}
-      </div>
-    </div>
-    <div class="container">
-      <div ui-view></div>
-    </div>
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
-    <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/angularfire/dist/angularfire.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <!-- endbower -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <script src="js/main.js"></script>
-    <script src="js/controllers/socialLinkController.js"></script>
-    <script src="js/controllers/utmController.js"></script>
-    <script src="js/controllers/authController.js"></script>
-    <script src="js/controllers/navController.js"></script>
-    <script src="js/controllers/urlShortenerController.js"></script>
-    <script src="js/services/auth.service.js"></script>
-  </body>
-  </html>
+  ga('create', 'UA-53444933-3', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+  <div ng-controller="navController">
+    <div class="navbar navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a ui-sref="home"><span class="navbar-brand">Social Link Builder</span></a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref="linkBuilder">Link builder</a></li>
+          <li><a ui-sref="utmBuilder">UTM Builder</a></li>
+          <li ng-show="authData"><a ui-sref="urlShortener">URL Shortener</a></li>
+          <li ng-hide="authData"><a href="./#/login">Login</a></li>
+          <li ng-show="authData"><a href ng-click="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert-box" ng-show="authData" ng-class="{fade:doFade}">
+      Welcome Back {{ authData.password.email }}
+    </div>
+  </div>
+  <div class="container">
+    <div ui-view></div>
+  </div>
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+  <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- endbower -->
+
+  <script src="js/main.js"></script>
+  <script src="js/controllers/socialLinkController.js"></script>
+  <script src="js/controllers/utmController.js"></script>
+  <script src="js/controllers/authController.js"></script>
+  <script src="js/controllers/navController.js"></script>
+  <script src="js/controllers/urlShortenerController.js"></script>
+  <script src="js/services/auth.service.js"></script>
+</body>
+</html>
