@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Social Link Builder</title>
-    <meta name="description" content="Generate links that autopopulate social sharing links for Twitter, Facebook, Google+, and LinkedIn. Add UTM codes to URLs for tracking. ">
+    <title>Social Link Generator</title>
+    <meta name="description" content="A small, simple tool to generate links for users to share your content on their Twitter, Facebook, Google+, and LinkedIn profiles. Also, add UTM codes to URLs for tracking campaigns.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -37,9 +37,9 @@
       </div>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a ui-sref="linkBuilder">Link builder</a></li>
-          <li><a ui-sref="utmBuilder">UTM Builder</a></li>
-          <li ng-show="authData"><a ui-sref="urlShortener">URL Shortener</a></li>
+          <li><a ui-sref="linkBuilder" ui-sref-active="active" >Link builder</a></li>
+          <li><a ui-sref="utmBuilder" ui-sref-active="active" >UTM Builder</a></li>
+          <li ng-show="authData"><a ui-sref="urlShortener" ui-sref-active="active" >URL Shortener</a></li>
           <li ng-hide="authData"><a href="./#/login">Login</a></li>
           <li ng-show="authData"><a href ng-click="logout()">Logout</a></li>
         </ul>
