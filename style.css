@@ -33,7 +33,7 @@ a {
 
 .panel {
 	background: transparent;
-	word-break: break-all;	
+	word-break: break-all;
 }
 
 .list-group-item {
@@ -46,4 +46,10 @@ a {
 
 body {
 	background-color: #F0F0F0;
+}
+
+@media screen and (min-width: 992px) {
+    .mdl-layout__drawer {
+        display: none;
+    }
 }

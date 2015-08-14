@@ -6,12 +6,11 @@
     <title>Social Link Generator</title>
     <meta name="description" content="A small, simple tool to generate links for users to share your content on their Twitter, Facebook, Google+, and LinkedIn profiles. Also, add UTM codes to URLs for tracking campaigns.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
-    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
+    <link rel="stylesheet" href="bower_components/material-design-lite/material.min.css" />
     <!-- endbower -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body ng-app="linkBuilder">
@@ -25,7 +24,68 @@
   ga('send', 'pageview');
 
   </script>
-  <div ng-controller="navController">
+  <!-- <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div ng-controller="navController">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout-icon"></div>
+        <div class="mdl-layout__header-row">
+           <span class="mdl-layout-title">Link Building Tool</span>
+           <div class="mdl-layout-spacer"></div>
+           <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" ui-sref="linkBuilder" ui-sref-active="active" >Link builder</a>
+            <a class="mdl-navigation__link" ui-sref="utmBuilder" ui-sref-active="active" >UTM Builder</a>
+            <a ng-hide="authData" class="mdl-navigation__link" ui-sref="login" ui-sref-active="active" ng-hide="authData">Login</a>
+            <a ng-show="authData" ui-sref="login" class="mdl-navigation__link" ng-click="logout()">Logout</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="mdl-layout__content">
+      <div ui-view></div>
+    </main>
+  </div> -->
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header" ng-controller="navController">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Link Building Tool</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" ui-sref="linkBuilder" ui-sref-active="active" >Link builder</a>
+          <a class="mdl-navigation__link" ui-sref="utmBuilder" ui-sref-active="active" >UTM Builder</a>
+          <a ng-hide="authData" class="mdl-navigation__link" ui-sref="login" ui-sref-active="active" ng-hide="authData">Login</a>
+          <a ng-show="authData" ui-sref="login" class="mdl-navigation__link" ng-click="logout()">Logout</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer" ng-controller="navController">
+      <span class="mdl-layout-title">Link Building Tool</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" ui-sref="linkBuilder" ui-sref-active="active" >Link builder</a>
+        <a class="mdl-navigation__link" ui-sref="utmBuilder" ui-sref-active="active" >UTM Builder</a>
+        <a ng-hide="authData" class="mdl-navigation__link" ui-sref="login" ui-sref-active="active" ng-hide="authData">Login</a>
+        <a ng-show="authData" ui-sref="login" class="mdl-navigation__link" ng-click="logout()">Logout</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content" ui-view></div>
+    </main>
+  </div>
+
+  <!-- <div ng-controller="navController">
     <div class="navbar navbar-default">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -47,25 +107,20 @@
     </div>
     <div class="alert-box" ng-show="authData" ng-class="{fade:doFade}">
       Welcome Back {{ authData.password.email }}
-    </div>
-  </div>
-  <div class="container">
-    <div ui-view></div>
-  </div>
+    </div> -->
+
+  <script src="https://apis.google.com/js/client.js"></script>
   <!-- bower:js -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-cookies/angular-cookies.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="bower_components/angular-touch/angular-touch.js"></script>
-  <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
-  <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/material-design-lite/material.min.js"></script>
   <!-- endbower -->
 
   <script src="js/main.js"></script>
