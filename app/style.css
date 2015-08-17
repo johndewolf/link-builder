@@ -6,6 +6,13 @@ a {
 	color: #337ab7;;
 }
 
+.mdl-grid {
+	max-width: 900px;
+}
+
+.text-center {
+	text-align: center;
+}
 .url-return {
 	word-break: break-all;
 }

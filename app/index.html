@@ -82,37 +82,9 @@
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--1-col-phone mdl-cell--2-col-tablet mdl-cell--3-col-desktop">
-        </div>
-        <div ui-view class="mdl-cell--10-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop"></div>
-      </div>
+      <div ui-view></div>
     </main>
   </div>
-
-  <!-- <div ng-controller="navController">
-    <div class="navbar navbar-default">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a ui-sref="home"><span class="navbar-brand">Social Link Builder</span></a>
-      </div>
-      <div class="navbar-collapse collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a ui-sref="linkBuilder" ui-sref-active="active" >Link builder</a></li>
-          <li><a ui-sref="utmBuilder" ui-sref-active="active" >UTM Builder</a></li>
-          <li ng-show="authData"><a ui-sref="urlShortener" ui-sref-active="active" >URL Shortener</a></li>
-          <li ng-hide="authData"><a ui-sref="login" ui-sref-active="active">Login</a></li>
-          <li ng-show="authData"><a href ng-click="logout()">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="alert-box" ng-show="authData" ng-class="{fade:doFade}">
-      Welcome Back {{ authData.password.email }}
-    </div> -->
 
   <script src="https://apis.google.com/js/client.js"></script>
   <!-- bower:js -->
