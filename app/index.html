@@ -11,6 +11,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -49,9 +50,7 @@
       Welcome Back {{ authData.password.email }}
     </div>
   </div>
-  <div class="container">
-    <div ui-view></div>
-  </div>
+  <div ui-view></div>
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -66,6 +65,9 @@
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <!-- endbower -->
 
   <script src="js/main.js"></script>

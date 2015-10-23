@@ -127,3 +127,7 @@ body {
 input:-webkit-autofill {
 	background-color: green;
 }
+
+input[label].url-input {
+	text-align: center;
+}

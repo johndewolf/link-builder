@@ -1,5 +1,5 @@
 var linkBuilder = angular
-	.module('linkBuilder', ['ui.router', 'firebase'])
+	.module('linkBuilder', ['ui.router', 'firebase', 'ngMaterial', 'ngMessages'])
 
 	.config(function($stateProvider, $urlRouterProvider){
 		$stateProvider
