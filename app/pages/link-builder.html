@@ -21,9 +21,9 @@
     <h3>Twitter</h3>
   </div>
 </div>
-<div layout="row" layout-sm="column" flex-sm="90">
+<div layout="row" layout-sm="column" flex="95">
   <div flex flex-offset="5">
-    <form name="twitterForm">
+    <form name="twitterForm" class="text-box">
       <md-input-container class="md-block">
         <label>Tweet Text</label>
         <textarea rows="3" columns="1"ng-model="slCtrl.twitterCopy" md-maxlength="117" name="copy" /></textarea>
@@ -32,19 +32,23 @@
     <span ng-show="slCtrl.twitterCopy.length > 117">Tweet is too long!</span>
   </div>
   <div flex flex-offset="5">
-    <div class="floating-label">Tweet Url:</div>
-    <div class="url-return" ng-class="{ 'tweet-over': slCtrl.tweetCopy.length > 117 }"><a href="{{ slCtrl.twitterReturnUrl() }}" target="_blank" ng-hide="!slCtrl.url">{{ slCtrl.twitterReturnUrl() }}</a></div>
+    <div class="text-box">
+      <div class="floating-label">Tweet Url:</div>
+      <div class="url-return" ng-class="{ 'tweet-over': slCtrl.tweetCopy.length > 117 }"><a href="{{ slCtrl.twitterReturnUrl() }}" target="_blank" ng-hide="!slCtrl.url">{{ slCtrl.twitterReturnUrl() }}</a></div>
+    </div>
   </div>
 </div>
+
+
 
 <div layout="row">
   <div flex-offset="5" flex-sm="90" flex="40" flex-offset-sm="5" >
     <h3>Linkedin</h3>
   </div>
 </div>
-<div layout="row" layout-sm="column" flex-sm="90">
+<div layout="row" layout-sm="column" flex="95">
   <div flex flex-offset="5">
-    <form>
+    <form class="text-box">
       <md-input-container class="md-block">
         <label>Title</label>
         <textarea columns="1" ng-model="slCtrl.linkedin.title"></textarea>
@@ -56,21 +60,27 @@
     </form>
   </div>
   <div flex flex-offset="5">
-    <div class="floating-label">Linkedin Url:</div>
-    <div class="url-return"><a href="{{ slCtrl.linkedinReturnUrl() }}" target="_blank" ng-hide="!slCtrl.url">{{ slCtrl.linkedinReturnUrl() }}</a></div>
+    <div class="text-box">
+      <div class="floating-label">Linkedin Url:</div>
+      <div class="url-return"><a href="{{ slCtrl.linkedinReturnUrl() }}" target="_blank" ng-hide="!slCtrl.url">{{ slCtrl.linkedinReturnUrl() }}</a></div>
+    </div>
   </div>
 </div>
 
-<div layout="row" layout-sm="column" flex-sm="90">
+<div layout="row" layout-sm="column" flex="95">
   <div flex flex-offset="5">
     <h3>Facebook</h3>
-    <div class="floating-label">Facebook Url:</div>
-    <div class="url-return"><a href="{{ slCtrl.facebookReturnUrl() }}" target="_blank" ng-hide="!slCtrl.url">{{ slCtrl.facebookReturnUrl() }}</a></div>
+    <div class="text-box">
+      <div class="floating-label">Facebook Url:</div>
+      <div class="url-return"><a href="{{ slCtrl.facebookReturnUrl() }}" target="_blank" ng-hide="!slCtrl.url">{{ slCtrl.facebookReturnUrl() }}</a></div>
+    </div>
   </div>
   <div flex flex-offset="5">
     <h3>Google Plus</h3>
-    <div class="floating-label">Google Plus Url:</div>
-    <div class="url-return"><a href="{{ slCtrl.gplusReturnUrl() }}" target="_blank" ng-hide="!slCtrl.url">{{ slCtrl.gplusReturnUrl() }}</a></div>
+    <div class="text-box">
+      <div class="floating-label">Google Plus Url:</div>
+      <div class="url-return"><a href="{{ slCtrl.gplusReturnUrl() }}" target="_blank" ng-hide="!slCtrl.url">{{ slCtrl.gplusReturnUrl() }}</a></div>
+    </div>
   </div>
 </div>
 
