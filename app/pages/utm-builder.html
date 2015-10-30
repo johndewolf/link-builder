@@ -1,43 +1,53 @@
 <div class="utmBuilder">
-  <div class="row">
-    <div class="col-sm-12 text-center">
+  <div layout="row">
+    <div flex class="text-center">
       <h3>What would you like to share?</h3>
-      <form name="urlForm" class="form-control-wrapper">
-        <input type="url" class="url-input form-control" placeholder="URL" name="input" ng-model="utmctrl.url" required>
-        <span class="material-input"></span>
-      </form>
-      <span class="error" ng-show="urlForm.input.$error.required">URL is required</span>
-      <span class="error" ng-show="urlForm.input.$error.utmctrl.url">Not valid URL (http:// is required)</span>
-
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <form ng-submit="utmctrl.submit()">
-        <div class="floating-label">UTM Source</div>
-        <input type="text" class="form-control" ng-model="utmctrl.utm.source"></input>
-
-        <div class="floating-label">UTM Campaign</div>
-        <input type="text" class="form-control" ng-model="utmctrl.utm.campaign"></input>
-
-        <div class="floating-label">UTM Medium</div>
-        <input type="text" class="form-control" ng-model="utmctrl.utm.medium"></input>
-
-        <button ng-class="utmctrl.url === invalid ? 'btn btn-danger' : 'btn btn-primary';">ADD</button>
+  <div layout="row">
+    <div flex-gt-sm="40" flex-sm="90" flex-offset-gt-sm="30" flex-offset-sm="5">
+      <form name="urlForm">
+        <md-input-container md-no-float>
+          <input type="url" class="url-input" placeholder="URL" name="input" ng-model="utmctrl.url" required>  
+        </md-input-container>
+        <div ng-messages="urlForm.input.$error.required">
+          <div ng-message="required">Must be valid URL</div>
+        </div>
       </form>
     </div>
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <ng-pluralize count="utmctrl.urls.length"
+  </div>
+  <div layout="row" layout-sm="column" flex="95">
+    <div flex flex-offset="5">
+      <form ng-submit="utmctrl.submit()" class="text-box">
+        <md-input-container class="md-block">
+          <label>UTM Source</label>
+          <input type="text" ng-model="utmctrl.utm.source"></input>
+        </md-input-container>
+        <md-input-container>
+          <label>UTM Campaign</label>
+          <input type="text" ng-model="utmctrl.utm.campaign"></input>
+        </md-input-container>
+        <md-input-container>
+          <label>UTM Medium</label>
+          <input type="text" ng-model="utmctrl.utm.medium"></input>
+        </md-input-container>
+          <button ng-class="utmctrl.url === invalid ? 'btn btn-danger' : 'btn btn-primary';">ADD</button>
+        </md-input-container>
+      </form>
+    </div>
+    <div flex flex-offset="5">
+      <div class="text-box">
+        <md-list>
+          <md-subheader><ng-pluralize count="utmctrl.urls.length"
                      when="{'0': 'URL',
                          'one': 'URL',
                          'other': 'URLS'}">
-          </ng-pluralize>
-        </div>
-        <ul class="panel-body">
-          <li class="list-group-item bounceInRight animated" ng-repeat="url in utmctrl.urls track by $index">{{url}}</li>
-        </ul>
+          </ng-pluralize></md-subheader>
+
+          <div class="md-list-item">
+            <li class="bounceInRight animated" ng-repeat="url in utmctrl.urls track by $index">{{url}}</li>
+          </div>
+        </md-list>
       </div>
     </div>
   </div>
