@@ -1,14 +1,20 @@
-<div class="row">
-	<div class="col-md-offset-4 col-md-4 text-box">
-		<h3>Register Now</h3>
-		<p>Gain access to exclussive features</p>
-		<form ng-submit="authctrl.register()">
-			<input type="email" class="form-control" placeholder="email" ng-model="authctrl.user.email" >
-			<input type="password" placeholder="password" class="form-control floating-label" ng-model="authctrl.user.password"> 
-			<div ng-show="authctrl.error">
-		  	<span>{{ authctrl.error.message }}</span>
-			</div>
-			<button type="submit" class="btn btn-primary">Register</button>
-		</form>
+<div layout="row">
+	<div flex-sm="90" flex-offset-sm="5" flex-offset-gt-sm="30" flex-gt-sm="40">
+		<div class="text-box">
+			<h3>Register Now</h3>
+			<p>Gain access to exclussive features</p>
+			<form ng-submit="authctrl.register()">
+				<md-input-container md-no-float>
+					<input type="email" placeholder="Email" ng-model="authctrl.user.email" >
+				</md-input-container md-no-float>
+				<md-input-container md-no-float>
+					<input type="password" placeholder="Password" class="form-control floating-label" ng-model="authctrl.user.password"> 
+				</md-input-container md-no-float>
+				<div ng-show="authctrl.error">
+			  	<span>{{ authctrl.error.message }}</span>
+				</div>
+				<md-button class="md-raised md-primary" type="submit">Log In</md-button>
+			</form>
+		</div>
 	</div>
 </div>

@@ -31,8 +31,7 @@
           <label>UTM Medium</label>
           <input type="text" ng-model="utmctrl.utm.medium"></input>
         </md-input-container>
-          <button ng-class="utmctrl.url === invalid ? 'btn btn-danger' : 'btn btn-primary';">ADD</button>
-        </md-input-container>
+        <md-button ng-class="utmctrl.url === invalid ? 'md-raised md-warn' : 'md-raised md-primary';" class="md-raised md-primary">Submit</md-button>
       </form>
     </div>
     <div flex flex-offset="5">

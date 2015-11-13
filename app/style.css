@@ -1,5 +1,10 @@
 body {
 	padding-bottom: 25px;
+	background-color: #F0F0F0;
+}
+
+.main-content {
+	background-color: #F0F0F0;
 }
 
 a {
@@ -23,12 +28,32 @@ a {
 	margin-bottom: 1em;
 }
 
+.main-menu {
+	float: right;
+}
+
+md-sidenav {
+	height: 100vh;
+}
+
+md-sidenav ul {
+	padding-left: 8px;
+}
+
+md-sidenav li {
+	margin-top: 16px;
+}
+
 .utmBuilder .panel-heading {
 	margin-top: 4em;
 }
 
 .utmBuilder button {
 	margin-top: 2em;
+}
+
+.text-box {
+	overflow-wrap: break-word;;
 }
 
 .panel {
@@ -44,10 +69,6 @@ a {
 	background-color: red;
 }
 
-body {
-	background-color: #F0F0F0;
-}
-
 .text-box {
 	background-color: white;
 	border-radius: 4px;
@@ -61,14 +82,6 @@ body {
 
 .text-box button {
 	margin-top: 2em;
-}
-
-.navbar-default .navbar-brand{
-	color:rgba(255, 255, 255, 0.84);
-}
-
-.navbar-default .navbar-brand:hover {
-	color:rgba(255, 255, 255, 0.84);
 }
 
 .alert-box {
@@ -130,5 +143,13 @@ input:-webkit-autofill {
 }
 
 input[label].url-input {
+	text-align: center;
+}
+
+.md-raised {
+	margin: 0.5rem 0;
+}
+
+.text-center {
 	text-align: center;
 }
