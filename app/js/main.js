@@ -51,4 +51,10 @@ var linkBuilder = angular
 				templateUrl: 'pages/register.html'
 			});
 		})
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue')
+    .accentPalette('orange');
+})
+
 	.constant('FirebaseUrl', 'https://link-builder.firebaseio.com');
