@@ -9,10 +9,11 @@
       <form name="urlForm">
         <md-input-container md-no-float>
           <input type="url" class="url-input" placeholder="URL" name="input" ng-model="utmctrl.url" required>  
+          <div ng-messages="urlForm.input.$error" role="alert" ng-if='urlForm.input.$dirty' multiple>
+            <div ng-message="url">Not a valid URL</div>
+            <div ng-message="required">URL is required</div>
+          </div>
         </md-input-container>
-        <div ng-messages="urlForm.input.$error.required">
-          <div ng-message="required">Must be valid URL</div>
-        </div>
       </form>
     </div>
   </div>

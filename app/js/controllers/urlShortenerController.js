@@ -10,7 +10,6 @@ angular.module('linkBuilder')
 
 		navCtrl.postUrl = function() {
  			if (navCtrl.fullUrl) {
-				debugger;
 				gapi.client.urlshortener.url.insert({
 					'longUrl': navCtrl.fullUrl
 				})

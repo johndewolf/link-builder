@@ -7,8 +7,8 @@
   <div flex-gt-sm="40" flex-sm="90" flex-offset-gt-sm="30" flex-offset-sm="5">
     <form name="urlForm" class="form-control-wrapper">
       <md-input-container md-no-float>
-        <input ng-model="slCtrl.url" type="url" placeholder="URL" class="url-input" required>
-        <div ng-messages="urlForm.input.$error">
+        <input ng-model="slCtrl.url" type="url" name="url" placeholder="URL" class="url-input" required>
+        <div ng-messages="urlForm.url.$error" ng-if='urlForm.url.$dirty'>
           <div ng-message="required">Must be a valid URL</div>
         </div>
       </md-input-container>

@@ -8,7 +8,7 @@
     <form name="urlForm" ng-submit="shortCtrl.submitUrl()">
       <md-input-container md-no-float>
         <input type="url" placeholder="URL" name="input" ng-model="shortCtrl.fullUrl" required >
-        <div ng-messages="urlForm.input.$error" role="alert" multiple>
+        <div ng-messages="urlForm.input.$error" role="alert" ng-if='urlForm.input.$dirty' multiple>
           <div ng-message="url">Not a valid URL</div>
           <div ng-message="required">URL is required</div>
         </div>
@@ -18,7 +18,7 @@
   </div>
 </div>
 <div layout="row">
-  <div flex-gt-sm="40" flex-sm="90" flex-offset-gt-sm="30" flex-offset-sm="5">
+  <div flex-gt-sm="60" flex-sm="90" flex-offset-gt-sm="20" flex-offset-sm="5">
     <div class="text-box">
       <div class="panel-heading">
         <ng-pluralize count="shortCtrl.urls.length"
