@@ -18,7 +18,7 @@
   </div>
 </div>
 <div layout="row">
-  <div flex-gt-sm="60" flex-sm="90" flex-offset-gt-sm="20" flex-offset-sm="5">
+  <div flex-gt-sm="50" flex-sm="90" flex-offset-gt-sm="25" flex-offset-sm="5">
     <div class="text-box">
       <div class="panel-heading">
         <ng-pluralize count="shortCtrl.urls.length"
@@ -26,8 +26,10 @@
                        'one': 'URL',
                        'other': 'URLs'}">
       </div>
-      <ul class="panel-body">
-        <li class="list-group-item bounceInRight animated" ng-repeat="url in shortCtrl.urls">{{url.longUrl}} - {{url.shortUrl}}</li>
+      <ul class="panel-body unstyled-list">
+        <li class="list-group-item bounceInRight animated" layout="row" layout-wrap ng-repeat="url in shortCtrl.urls">
+          <div flex-gt-sm="50" flex="100">{{url.longUrl}}</div><div flex-gt-sm="50" flex="100">{{url.shortUrl}}</div>
+        </li>
       </ul>
     </div>
   </div>
