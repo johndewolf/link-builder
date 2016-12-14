@@ -23,6 +23,6 @@ angular.module('linkBuilder')
 				authCtrl.$log = 'bye';
 			});
 		};
-		
+
 
 	});

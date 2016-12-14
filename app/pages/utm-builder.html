@@ -8,7 +8,7 @@
     <div flex-gt-sm="40" flex-sm="90" flex-offset-gt-sm="30" flex-offset-sm="5">
       <form name="urlForm">
         <md-input-container md-no-float>
-          <input type="url" class="url-input" placeholder="URL" name="input" ng-model="utmctrl.url" required>  
+          <input type="url" class="url-input" placeholder="URL" name="input" ng-model="utmctrl.url" required>
           <div ng-messages="urlForm.input.$error" role="alert" ng-if='urlForm.input.$dirty' multiple>
             <div ng-message="url">Not a valid URL</div>
             <div ng-message="required">URL is required</div>
@@ -32,7 +32,7 @@
           <label>UTM Medium</label>
           <input type="text" ng-model="utmctrl.utm.medium"></input>
         </md-input-container>
-        <md-button ng-class="utmctrl.url === invalid ? 'md-raised md-warn' : 'md-raised md-primary';" class="md-raised md-primary">Submit</md-button>
+        <md-button ng-class="utmctrl.url === invalid ? 'md-raised md-warn' : 'md-raised md-primary';" class="md-raised md-primary">Create URL</md-button>
       </form>
     </div>
     <div flex flex-offset="5">
@@ -45,7 +45,9 @@
           </ng-pluralize></md-subheader>
 
           <div class="md-list-item">
-            <li class="bounceInRight animated" ng-repeat="url in utmctrl.urls track by $index">{{url}}</li>
+            <ul class="unstyled-list">
+              <li class="bounceInRight animated" ng-repeat="url in utmctrl.urls track by $index">{{url}}</li>
+            </ul>
           </div>
         </md-list>
       </div>

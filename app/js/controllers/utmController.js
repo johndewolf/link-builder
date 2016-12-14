@@ -13,6 +13,9 @@ angular.module('linkBuilder')
 		utmCtrl.submit = function() {
 			if(utmCtrl.url) {
 				utmCtrl.urls.push(utmCtrl.url + '?utm_source=' + utmCtrl.utm.source + '&utm_campaign=' + utmCtrl.utm.campaign + '&utm_medium=' + utmCtrl.utm.medium);
+				utmCtrl.utm.source = '';
+				utmCtrl.utm.campaign = '';
+				utmCtrl.utm.medium = '';
 			}
 		} 
 
