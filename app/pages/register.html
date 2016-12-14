@@ -2,13 +2,13 @@
 	<div flex-sm="90" flex-offset-sm="5" flex-offset-gt-sm="30" flex-gt-sm="40">
 		<div class="text-box">
 			<h3>Register Now</h3>
-			<p>Gain access to exclussive features</p>
+			<p>Gain access to exclusive features</p>
 			<form ng-submit="authctrl.register()">
 				<md-input-container md-no-float>
 					<input type="email" placeholder="Email" ng-model="authctrl.user.email" >
 				</md-input-container md-no-float>
 				<md-input-container md-no-float>
-					<input type="password" placeholder="Password" class="form-control floating-label" ng-model="authctrl.user.password"> 
+					<input type="password" placeholder="Password" class="form-control floating-label" ng-model="authctrl.user.password">
 				</md-input-container md-no-float>
 				<div ng-show="authctrl.error">
 			  	<span>{{ authctrl.error.message }}</span>
