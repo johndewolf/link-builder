@@ -1,6 +1,9 @@
 body {
-	padding-bottom: 25px;
 	background-color: #F0F0F0;
+}
+
+.body-container {
+	height: 100%;
 }
 
 .main-content {
