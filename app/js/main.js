@@ -1,7 +1,7 @@
 var linkBuilder = angular
 	.module('linkBuilder', ['ui.router', 'firebase', 'ngMaterial', 'ngMessages'])
 
-	.config(function($stateProvider, $urlRouterProvider){
+	.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		$stateProvider
 			.state('utmBuilder', {
 				url: '/utm-builder',
@@ -50,11 +50,11 @@ var linkBuilder = angular
 				controller: 'authController as authctrl',
 				templateUrl: 'pages/register.html'
 			});
+			$locationProvider.html5Mode(true);
 		})
-.config(function($mdThemingProvider) {
-  $mdThemingProvider.theme('default')
-    .primaryPalette('blue')
-    .accentPalette('orange');
-})
-
+	.config(function($mdThemingProvider) {
+	  $mdThemingProvider.theme('default')
+	    .primaryPalette('blue')
+	    .accentPalette('orange');
+	})
 	.constant('FirebaseUrl', 'https://link-builder.firebaseio.com');

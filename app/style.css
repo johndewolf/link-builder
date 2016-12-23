@@ -56,7 +56,8 @@ md-sidenav li {
 }
 
 .text-box {
-	overflow-wrap: break-word;;
+	overflow-wrap: break-word;
+	border-top: 3px solid #34495E;
 }
 
 .panel {
