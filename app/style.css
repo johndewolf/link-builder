@@ -11,7 +11,15 @@ body {
 }
 
 a {
-	color: #337ab7;;
+	color: #337ab7;
+	transition: all ease-in-out 0.2s;
+}
+a:hover {
+	color: rgba(51, 122, 183, 0.7);
+}
+
+li a.active {
+	color: #34495E;
 }
 
 .url-return {
@@ -29,6 +37,14 @@ a {
 .utmBuilder .floating-label {
 	margin-top: 4em;
 	margin-bottom: 1em;
+}
+
+table {
+	min-width: 100%;
+}
+
+table th {
+	text-align: left;
 }
 
 .main-menu {
