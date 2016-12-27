@@ -1,11 +1,11 @@
   <!doctype html>
-  <html class="no-js" lang="en-us">
+  <html class="no-js" lang="en-us" ng-app="linkBuilder">
   <head>
     <meta charset="utf-8">
     <base href="/">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Social Link Generator</title>
+    <title ng-bind="$state.current.data.title + ' | URL Toolbox'">URL Toolbox</title>
     <meta name="description" content="A small, simple tool to generate links for users to share your content on their Twitter, Facebook, Google+, and LinkedIn profiles. Also, add UTM codes to URLs for tracking campaigns.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bower:css -->
@@ -16,7 +16,7 @@
       rel="stylesheet">
 
   </head>
-  <body ng-app="linkBuilder">
+  <body>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -37,11 +37,11 @@
 
       <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')">
         <md-toolbar class="md-theme-indigo">
-          <h1 class="md-toolbar-tools"><a ui-sref="home">Social Link Builder</a></h1>
+          <h1 class="md-toolbar-tools"><a ui-sref="home" ng-bind="$state.current.data.title">URL Toolbox</a></h1>
         </md-toolbar>
         <md-content layout-padding ng-controller="navController">
           <ul>
-            <li><a ui-sref="linkBuilder" ui-sref-active="active" >Link Builder</a></li>
+            <li><a ui-sref="linkBuilder" ui-sref-active="active" >Social Link Generator</a></li>
             <li><a ui-sref="utmBuilder" ui-sref-active="active" >UTM Builder</a></li>
             <li ng-show="authData"><a ui-sref="urlShortener" ui-sref-active="active" >URL Shortener</a></li>
             <li ng-hide="authData"><a ui-sref="login" ui-sref-active="active">Login</a></li>
